@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Linkdev.IKEA.BLL.Models.Department
 {
-	internal class DepartmentDto
+	public class DepartmentDto
 	{
         public string Code { get; set; } = null!;
 

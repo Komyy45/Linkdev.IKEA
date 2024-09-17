@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Query;
 
 namespace Linkdev.IKEA.BLL.Services.Departments
 {
-	internal class DepartmentService : IDepartmentService
+	public class DepartmentService : IDepartmentService
 	{
 		private readonly DepartmentRepository _departmentRepo;
 
