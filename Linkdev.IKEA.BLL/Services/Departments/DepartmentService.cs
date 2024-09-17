@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Linkdev.IKEA.BLL.Models.Department;
+﻿using Linkdev.IKEA.BLL.Models.Department;
 using Linkdev.IKEA.DAL.Entities.Department;
 using Linkdev.IKEA.DAL.Presistance.Repositories.Departments;
-using Microsoft.EntityFrameworkCore.Query;
 
 namespace Linkdev.IKEA.BLL.Services.Departments
 {
-	public class DepartmentService : IDepartmentService
+    public class DepartmentService : IDepartmentService
 	{
 		private readonly IDepartmentRepository _departmentRepo;
 
@@ -30,7 +24,6 @@ namespace Linkdev.IKEA.BLL.Services.Departments
 				{
 					Code = department.Code,
 					Name = department.Name,
-					Description = department.Description,
 					CreationDate = department.CreationDate,
 				};
 			}
