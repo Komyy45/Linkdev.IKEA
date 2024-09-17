@@ -12,9 +12,9 @@ namespace Linkdev.IKEA.BLL.Services.Departments
 {
 	public class DepartmentService : IDepartmentService
 	{
-		private readonly DepartmentRepository _departmentRepo;
+		private readonly IDepartmentRepository _departmentRepo;
 
-		public DepartmentService(DepartmentRepository departmentRepo) // Asking CLR for object from class Implementing IDepartment Repository Interface
+		public DepartmentService(IDepartmentRepository departmentRepo) // Asking CLR for object from class Implementing IDepartment Repository Interface
 		{
 			_departmentRepo = departmentRepo;
 		}
