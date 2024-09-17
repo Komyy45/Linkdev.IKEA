@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Linkdev.IKEA.DAL.Models.Department;
+using Linkdev.IKEA.DAL.Entities.Department;
 using Linkdev.IKEA.DAL.Presistance.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,8 +23,14 @@ namespace Linkdev.IKEA.DAL.Presistance.Repositories.Departments
 			if (AsNoTracking)
 				return _context.Departments.AsNoTracking().ToList();
 
-			return _context.Departments.ToList();
+			return  _context.Departments.ToList();
 		}
+
+		public IQueryable<Department> GetAllAsQueryable()
+		{
+			return _context.Departments;
+		}
+
 		public Department? Get(int id)
 		{
 			return _context.Departments.Find(id);

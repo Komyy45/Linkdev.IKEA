@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Linkdev.IKEA.DAL.Models.Department;
+using Linkdev.IKEA.DAL.Entities.Department;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 

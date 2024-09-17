@@ -25,7 +25,7 @@ namespace Linkdev.IKEA.DAL.Presistance.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Linkdev.IKEA.DAL.Models.Department.Department", b =>
+            modelBuilder.Entity("Linkdev.IKEA.DAL.Entities.Department.Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,4 +1,5 @@
 using Linkdev.IKEA.DAL.Presistance.Data;
+using Linkdev.IKEA.DAL.Presistance.Repositories.Departments;
 using Microsoft.EntityFrameworkCore;
 
 namespace Linkdev.IKEA.PL
@@ -13,6 +14,8 @@ namespace Linkdev.IKEA.PL
 			#region Configure Services
 
 			builder.Services.AddControllersWithViews();
+
+			builder.Services.AddScoped<IDepartmentRepository , DepartmentRepository>();
 
 			builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), options => options.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
