@@ -56,7 +56,7 @@ namespace Linkdev.IKEA.BLL.Services.Departments
 				Code = model.Code,
 				Name = model.Name,
 				Description = model.Description,
-				CreationDate = DateOnly.FromDateTime(DateTime.UtcNow),
+				CreationDate = model.CreationDate,
 				CreatedBy = 1,
 				LastModifiedBy = 1,
 				LastModifiedOn = DateTime.UtcNow,
