@@ -16,12 +16,13 @@ namespace Linkdev.IKEA.BLL.Services.Departments
 		public IEnumerable<DepartmentDto> GetAllDepartments()
 		{
 			var departments = _departmentRepo.GetAllAsQueryable()
-											 .Select(D => new { D.Code, D.Name, D.Description, D.CreationDate });
+											 .Select(D => new { D.Id, D.Code, D.Name, D.Description, D.CreationDate });
 
 			foreach(var department in departments)
 			{
 				yield return new DepartmentDto()
 				{
+					Id = department.Id,
 					Code = department.Code,
 					Name = department.Name,
 					CreationDate = department.CreationDate,
@@ -29,7 +30,7 @@ namespace Linkdev.IKEA.BLL.Services.Departments
 			}
 		}
 
-		public DepartmentDetailsDto? GetDepartmentDetails(int id)
+		public DepartmentDetailsDto? GetDepartmentDetails(int? id)
 		{
 			var department = _departmentRepo.Get(id);
 

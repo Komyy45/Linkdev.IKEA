@@ -6,7 +6,7 @@ namespace Linkdev.IKEA.BLL.Services.Departments
 	{
 		IEnumerable<DepartmentDto> GetAllDepartments();
 
-		DepartmentDetailsDto? GetDepartmentDetails(int id);
+		DepartmentDetailsDto? GetDepartmentDetails(int? id);
 
 		int CreateDepartment(CreatedDepartmentDto model);
 		

@@ -39,17 +39,17 @@
                         @department.CreationDate
                     </td>
                     <td>
-                        <a asp-action="Details" class="btn btn-outline-warning">
+                        <a asp-action="Details" class="btn btn-outline-warning" asp-route-id="@department.Id">
                             <i class="fa-regular fa-eye me-2"></i> Details
                         </a>
                     </td>
                     <td>
-                        <a asp-action="Edit" class="btn btn-outline-info">
+                        <a asp-action="Edit" asp-route-id="@department.Id" class="btn btn-outline-info">
                                 <i class="fa-regular fa-pen-to-square me-2"></i> Edit
                         </a>
                     </td>
                     <td>
-                        <a asp-action="Delete" class="btn btn-outline-danger">
+                            <a asp-action="Delete" asp-route-id="@department.Id" class="btn btn-outline-danger">
                             <i class="fa-solid fa-trash me-2"></i> Delete
                         </a>
                     </td>

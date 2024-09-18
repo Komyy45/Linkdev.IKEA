@@ -13,7 +13,7 @@ namespace Linkdev.IKEA.DAL.Presistance.Repositories.Departments
 
 		IQueryable<Department> GetAllAsQueryable();
 
-		Department? Get(int id);
+		Department? Get(int? id);
 		
 		int Add(Department department);
 

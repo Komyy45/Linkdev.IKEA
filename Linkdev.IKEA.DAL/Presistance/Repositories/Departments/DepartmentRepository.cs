@@ -31,7 +31,7 @@ namespace Linkdev.IKEA.DAL.Presistance.Repositories.Departments
 			return _context.Departments;
 		}
 
-		public Department? Get(int id)
+		public Department? Get(int? id)
 		{
 			return _context.Departments.Find(id);
 		}
