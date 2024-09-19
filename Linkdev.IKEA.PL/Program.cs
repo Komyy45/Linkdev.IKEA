@@ -1,3 +1,8 @@
+using Linkdev.IKEA.BLL.Services.Departments;
+using Linkdev.IKEA.DAL.Presistance.Data;
+using Linkdev.IKEA.DAL.Presistance.Repositories.Departments;
+using Microsoft.EntityFrameworkCore;
+
 namespace Linkdev.IKEA.PL
 {
 	public class Program
@@ -7,11 +12,23 @@ namespace Linkdev.IKEA.PL
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
+			#region Configure Services
+
 			builder.Services.AddControllersWithViews();
+
+			builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), options => options.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
+			builder.Services.AddScoped<IDepartmentRepository , DepartmentRepository>();
+
+			builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+
+			#endregion
 
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
+			#region Configure
+
 			if (!app.Environment.IsDevelopment())
 			{
 				app.UseExceptionHandler("/Home/Error");
@@ -28,7 +45,9 @@ namespace Linkdev.IKEA.PL
 
 			app.MapControllerRoute(
 				name: "default",
-				pattern: "{controller=Home}/{action=Index}/{id?}");
+				pattern: "{controller=Home}/{action=Index}/{id?}"); 
+
+			#endregion
 
 			app.Run();
 		}
